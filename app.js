@@ -58,7 +58,7 @@ app.post('/api/avatar', function (req, res, next) {
 				//.draw(['image Over 0,0 300,300 ./image/bg-new.png'])
         .composite('./image/bg-new.png')
 				.geometry('+0+0')
-				.stream(function streamOut (err, stdout, stderr) {
+				.stream('jpg', function streamOut (err, stdout, stderr) {
             if (err) return next(err);
             stdout.pipe(res); //pipe to response
 
